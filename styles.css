@@ -1,0 +1,391 @@
+
+/***************Reset*************************/
+:root{
+    --font: 'Roboto Mono', monospace, sans-serif;
+    --text-color: whitesmoke;
+    --second-alpha-color: #000;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-color);
+    background-color: var(--second-alpha-color);
+}
+
+a{
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover{
+    opacity: 0.75;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+h5 {
+    margin: 0;
+    font-size: .75rem;
+}
+
+h6 {
+    margin: 0;
+    font-size: .5rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.section{
+    width: 100vw;
+    height: auto;
+}
+
+svg{
+    fill: var(--text-color);
+}
+
+/****/
+
+.btn-search{
+    background-color: #0005;
+    border: thin solid var(--text-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    padding: 1rem;
+    min-width: 100px;
+    max-width: 30vw;
+    font-size: 1rem;
+}
+
+.container-hero{
+    background-image: url(assets/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-hero p{
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.search{
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-control{
+    background-color: #0005;
+    border: thin solid var(--text-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    height: 2.5rem;
+    padding: .5rem;
+    width: 80%;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.sugerencias{
+    text-align: center;
+   margin-top: 3rem;
+}
+
+.chevron{
+    width: 3rem;
+    height: auto;
+}
+
+
+.who{
+    margin-bottom: 3rem;
+}
+.who p{
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.6; 
+    margin-left: 50vw;
+    border: thick solid var(--text-color);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+ .search{
+    width: 40vw;
+ }
+}
+
+@media screen and (min-width: 1024px) {
+    .search{
+       width: 30vw;
+    }
+
+    
+    .btn-search{
+        font-size: 1rem;
+        width: 15vw;
+
+    }
+
+   }
+
+   
+/* ************RESPONSIVE SLIDER*************/
+.section{
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+
+.slider, .slider2 {
+    position: relative;
+    border: thin solid black;
+    text-align: center;
+    width: 90vw;
+    margin: 5rem auto;
+}
+
+.slider h2 {
+    text-align: left;
+}
+
+
+.slider-slides, .slider-slides2 {
+    position: relative;
+    height: 400px;
+    display: flex;
+}
+
+.slider-slide, .slider-slide2 {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    text-align: left;
+}
+
+.slider-slide.active,
+.slider-slide2.active  {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider-slide img,
+.slider-slide2 img  {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+.slider-btn,
+.slider-btn2 {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+/*
+.slider a,
+.slider2 a {
+    display: block;
+    width: 4 rem;
+    height: 4 rem;
+    border-radius: 50%;
+    border: thin solid var(--text-color);
+    text-decoration: none;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
+}
+*/
+
+
+
+.slider a:hover,
+.slider2 a:hover {
+    color: #4d4d4d;
+}
+
+.prev, .next,
+.prev2, .next2{
+    height: 3rem;
+    width: auto;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .slider, .slider2 {
+        width: 350px;
+    }
+}
+
+
+
+/*Ventana modal*/
+
+.btn-modal{
+    color: var(--text-color);
+    background-color: #000;
+    border: thin solid var(--text-color);
+    padding: 1rem;
+    border-radius: 25px;
+    width: 10rem;
+}
+
+.modal {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+    z-index: 997;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0008;
+    transition: opacity 500ms ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    position: relative;
+    padding: 2rem;
+    background-color: #000;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: hidden;
+}
+
+.modal-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #000;
+    text-decoration: none;
+    text-align: center;
+    line-height: 3rem;
+    border-radius: 50%;
+    transition: background-color 300ms linear, transform 300ms ease-in-out;
+}
+
+.modal-close:hover{
+    background-color: #d00;
+    transform: scale(1.2);
+}
+
+
+
+.font-awesome{
+    width: 3rem;
+    height: 3rem;
+    fill: #fff;
+    display: inline-block;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+
+       .modal-container {
+        position: relative;
+        padding: 2rem;
+        background-color: #000;
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .modal-container img{
+        width: 30%;
+        object-fit: cover;
+        margin-right: 1rem;
+    }
+   }
+
+ 
+
+    
